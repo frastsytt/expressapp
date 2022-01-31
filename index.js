@@ -7,13 +7,24 @@ app.use(express.static('public'));
 // add views template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended:true}));
 
-app.get('/questions', (req, res)=>{
-	let questions = [
-		{title: 'What is Node.js?', user: 'Kadi', votes: '10'},
-		{title: 'What is Express.js?', user: 'Mike', votes: '8'}
-	]
-	res.render('index.ejs', {questions:questions});
+app.get('/login', (req, res)=>{
+	res.render('login');
+});
+
+app.post('/login', (req, res)=> {
+	let username = req.body.username;
+	let password = req.body.password;
+
+	if(username === 'user' && password === 'qwerty'){
+		res.redirect('/dashboard');
+	}
+});
+
+app.get('/dashboard', (req, res)=> {
+	res.render('dashboard');
 });
 
 
