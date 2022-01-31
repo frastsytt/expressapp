@@ -1,0 +1,27 @@
+{
+  "name": "expressapp",
+  "version": "1.0.0",
+  "description": "expressapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frastsytt/expressapp.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs"
+  ],
+  "author": "Roomet Sütt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frastsytt/expressapp/issues"
+  },
+  "homepage": "https://github.com/frastsytt/expressapp#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  }
+}
