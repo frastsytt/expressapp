@@ -1,8 +1,13 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 //declare public directory
 app.use(express.static('public'));
+// add views template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 
 app.get('/user/:username', (req, res)=> {
 	let user = req.params.username;
